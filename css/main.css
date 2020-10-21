@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+canvas {
+    /* display: block; */
+    padding: 0;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.text-line {
+    transform: translate(600px, -500px)
+}
+
+/* h1 {
+    font-family: IMPACT;
+} */
