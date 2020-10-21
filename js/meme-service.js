@@ -17,6 +17,13 @@ var gMeme = {
 }
 
 
+function onChoosePic(id){
+    // console.log(id);
+    // console.log(gMeme.selectedImgId);
+    gMeme.selectedImgId = id
+    // console.log(gMeme.selectedImgId);
+    drawImg()
+}
 
 
 function drawText(text, x, y) {
@@ -38,4 +45,11 @@ function drawImg() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
     }
+}
+
+
+function clearCanvas() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
+    // You may clear part of the canvas
+    // gCtx.clearRect(50, 50, 225, 225)
 }
