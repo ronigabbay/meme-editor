@@ -9,6 +9,12 @@ function onInit() {
 
 
 
+function onChoosePic(id){
+    gMeme.selectedImgId = id
+    drawImg()
+}
+
+
 function onInput() {
     var elTxtInput = document.querySelector('.text-line');
     return elTxtInput.value;

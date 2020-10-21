@@ -17,6 +17,8 @@ var gMeme = {
 }
 
 
+
+
 function drawText(text, x, y) {
     gCtx.strokeStyle = gMeme.lines.color;
     // console.log(gMeme.lines[gMeme.selectedLineIdx].color);
