@@ -9,17 +9,25 @@ canvas {
     margin: 10px;
     border: 1px solid black;
 }
-
-.text-line {
-    transform: translate(600px, -500px)
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     grid-template-rows: repeat(4, 200px);
     grid-gap: 10px
 }
+
+/* עיצוב ומיקום זמני */
+
+.text-line {
+    transform: translate(600px, -500px)
+}
+
+.font-size-btn, .line-move-btn, .switch-line-btn{
+    transform: translate(600px, -500px)
+}
+
+
+
 
 img {
     width: 100%;

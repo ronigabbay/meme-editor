@@ -1,6 +1,7 @@
 'use strict'
 
 
+var gCurrOneHeigt = 60;
 
 function onInit() {
     gCanvas = document.querySelector('#my-canvas');
@@ -16,22 +17,74 @@ function onChoosePic(id) {
 }
 
 
-function onDrawText() {
-    // var img = document.getElementById(`${gMeme.selectedImgId}`)
-    // drawImg()
+function onLineUp(){
     var img = new Image();
     img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-        drawText(onInput(), 250, 60)
+        
+
+        onInput()
+        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt - 1)
     }
-    // setTimeout(function () {
-    //     drawText(onInput(), 250, 60)
-    // }, 2)
+    
+    gCurrOneHeigt = gCurrOneHeigt - 1;
+}
+
+function onLineDown() {
+    var img = new Image();
+    img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+       
+        onInput()
+        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt + 1)
+    }
+    
+    gCurrOneHeigt = gCurrOneHeigt + 1;
+}
+
+
+function onIncreaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size ++
+    var img = new Image();
+    img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+       
+        onInput()
+        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt)
+    }
+}
+
+function onDecreaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size --
+    var img = new Image();
+    img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+    
+        onInput()
+        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt)
+    }
+}
+
+function onDrawText() {
+    var img = new Image();
+    img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+        onInput()
+        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, 60);
+        
+        
+        drawText(gMeme.lines[1].txt, 250, 440)
+    }
+
 }
 
 function onInput() {
     var elTxtInput = document.querySelector('.text-line');
-    return elTxtInput.value;
+    gMeme.lines[gMeme.selectedLineIdx].txt = elTxtInput.value;
 }
 

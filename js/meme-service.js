@@ -9,19 +9,26 @@ var gMeme = {
     lines: [
         {
             txt: 'I love football',
+            // txt: onInput(),
             size: 34,
             align: 'center',
             color: 'red'
+        },
+        {
+            txt: 'I love Tel Aviv',
+            size: 24,
+            align: 'center',
+            color: 'red'
         }
+        
     ]
 }
 
 
+
+
 function onChoosePic(id){
-    // console.log(id);
-    // console.log(gMeme.selectedImgId);
     gMeme.selectedImgId = id
-    // console.log(gMeme.selectedImgId);
     drawImg()
 }
 
@@ -48,8 +55,4 @@ function drawImg() {
 }
 
 
-function clearCanvas() {
-    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
-    // You may clear part of the canvas
-    // gCtx.clearRect(50, 50, 225, 225)
-}
+
