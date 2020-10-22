@@ -1,6 +1,8 @@
 'use strict'
 
+
 var gImgs = [
+    { id: 0, url: './imgs/meme-imgs (square)/0.jpg', keywords: ['happy'] },
     { id: 1, url: './imgs/meme-imgs (square)/1.jpg', keywords: ['happy'] },
     { id: 2, url: './imgs/meme-imgs (square)/2.jpg', keywords: ['happy'] },
     { id: 3, url: './imgs/meme-imgs (square)/3.jpg', keywords: ['happy'] },
@@ -28,7 +30,7 @@ function renderGallery() {
 
     var strHtml = '';
     gImgs.forEach(function (img) {
-        strHtml += `<img id="${img.id}" onclick="onChoosePic(${img.id})" src="./imgs/meme-imgs (square)/${img.id}.jpg" alt="">`
+        strHtml += `<img id="${img.id}" class="img" onclick="onChoosePic(${img.id})" src="./imgs/meme-imgs (square)/${img.id}.jpg" alt="">`
         // console.log(img);
     })
     elGallery.innerHTML = strHtml;

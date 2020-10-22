@@ -4,7 +4,7 @@ var gCtx;
 var gCanvas;
 
 var gMeme = {
-    selectedImgId: 1,
+    selectedImgId: 0,
     selectedLineIdx: 0,
     lines: [
         {
