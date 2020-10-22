@@ -12,19 +12,21 @@
         <canvas id="my-canvas" height="500" width="500" ></canvas>
     </div>
 
-    <input onkeydown="onDrawText()"  class="text-line" type="text">
-    <button class="font-size-btn" onclick="onIncreaseFont()" >+</button>
-    <button class="font-size-btn" onclick="onDecreaseFont()">-</button>
-    <button class="line-move-btn up-btn" onclick="onLineUp()">Up</button>
-    <button class="line-move-btn down-btn" onclick="onLineDown()" >Down</button>
-    <button class="switch-line-btn" onclick="onSwitchLine()" >Switch line</button>
+    <div class="box">
+        <input onkeydown="onDrawText()"  class="text-line" type="text">
+        <button class="font-size-btn" onclick="onIncreaseFont()" >+</button>
+        <button class="font-size-btn" onclick="onDecreaseFont()">-</button>
+        <button class="line-move-btn up-btn" onclick="onLineUp()">Up</button>
+        <button class="line-move-btn down-btn" onclick="onLineDown()" >Down</button>
+        <br>
+        <button class="switch-line-btn" onclick="onSwitchLine()" >Switch line</button>
+        <button class="delete-line-btn" onclick="onDeleteLine()" >Delete line</button>
+        <button class="delete-line-btn" onclick="onAddLine()" >Add line</button>
+        <a class="download" href="#" onclick="downloadCanvas(this)" download="">Download</a>
+    </div>
 
-    <div class="grid-container">
-        <img id="1" onclick="onChoosePic(id)" src="./imgs/meme-imgs (square)/1.jpg" alt="">
-        <img id="2" onclick="onChoosePic(id)" src="./imgs/meme-imgs (square)/2.jpg" alt="">
-        <img id="3" onclick="onChoosePic(id)" src="./imgs/meme-imgs (square)/3.jpg" alt=""> 
-        <img id="4" src="./imgs/meme-imgs (square)/4.jpg" alt=""> 
-        <img id="5" src="./imgs/meme-imgs (square)/5.jpg" alt=""> 
+    <div class="grid-container gallery-container">
+        
     </div>
     
     <script src="./js/gallery-service.js"></script>

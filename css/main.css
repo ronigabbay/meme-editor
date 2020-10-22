@@ -18,11 +18,18 @@ canvas {
 
 /* עיצוב ומיקום זמני */
 
-.text-line {
+/* .text-line {
+    display: inline-block;
+} */
+
+/* .font-size-btn, .line-move-btn, .switch-line-btn{
     transform: translate(600px, -500px)
 }
+.download {
+    transform: translate(600px, -490px)
+} */
 
-.font-size-btn, .line-move-btn, .switch-line-btn{
+.box{
     transform: translate(600px, -500px)
 }
 

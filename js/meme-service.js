@@ -8,15 +8,20 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I love football',
-            // txt: onInput(),
+            txt: '',
             size: 34,
             align: 'center',
             color: 'red'
         },
         {
-            txt: 'I love Tel Aviv',
-            size: 24,
+            txt: '',
+            size: 34,
+            align: 'center',
+            color: 'red'
+        },
+        {
+            txt: '',
+            size: 34,
             align: 'center',
             color: 'red'
         }
@@ -35,7 +40,6 @@ function onChoosePic(id){
 
 function drawText(text, x, y) {
     gCtx.strokeStyle = gMeme.lines.color;
-    // console.log(gMeme.lines[gMeme.selectedLineIdx].color);
     gCtx.fillStyle = 'white'
     gCtx.lineWidth = '2'
     gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px IMPACT`
@@ -52,6 +56,13 @@ function drawImg() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
     }
+}
+
+
+function downloadCanvas(elLink) {
+    const data = gCanvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'New Meme'
 }
 
 
