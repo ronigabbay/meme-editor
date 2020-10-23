@@ -10,20 +10,24 @@
 
 <body onload="onInit()">
 
-    <header class="main-header">
+   
+
+   
+
+    <header class="main-header container flex space-between align-center">
 
         <div class="logo">Logo</div>
 
         <nav>
-            <ul class="main-nav">
+            <ul class="main-nav clean-list flex">
                 <li><a href="">Gallery</a></li>
-                <li><a href=""></a>About</li>
+                <li><a href="">About</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <section class="main-editor">
+    <section class="main-editor container">
 
         <div class="canvas-container">
             <!-- height="500" width="500" -->
@@ -32,7 +36,7 @@
             </canvas>
         </div>
 
-        <div class="btn-box">
+        <div class="btns-container">
             <input onkeydown="onDrawText()" class="text-line" type="text">
             <button class="font-size-btn" onclick="onIncreaseFont()">+</button>
             <button class="font-size-btn" onclick="onDecreaseFont()">-</button>
@@ -47,7 +51,9 @@
 
     </section>
 
-    <section class="main-gallery">
+
+
+    <section class="main-gallery container">
 
         <div class="grid-container gallery-container">
 
@@ -56,7 +62,11 @@
     </section>
 
 
-    <footer class="main-footer"></footer>
+    <footer class="main-footer">
+        <div class="footer-container container" >
+            <h4>Created By Roni Gabbay</h4>
+        </div>
+    </footer>
 
 
     <script src="./js/gallery-service.js"></script>
