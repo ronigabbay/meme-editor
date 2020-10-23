@@ -27,7 +27,7 @@
 
     </header>
 
-    <section class="main-editor container">
+    <section class="main-editor container grid">
 
         <div class="canvas-container">
             <!-- height="500" width="500" -->
@@ -36,21 +36,36 @@
             </canvas>
         </div>
 
+        <div class="space"></div>
+
         <div class="btns-container">
             <input onkeydown="onDrawText()" class="text-line" type="text">
-            <button class="font-size-btn" onclick="onIncreaseFont()">+</button>
-            <button class="font-size-btn" onclick="onDecreaseFont()">-</button>
-            <button class="line-move-btn up-btn" onclick="onLineUp()">Up</button>
-            <button class="line-move-btn down-btn" onclick="onLineDown()">Down</button>
-            <br>
-            <button class="switch-line-btn" onclick="onSwitchLine()">Switch line</button>
-            <button class="delete-line-btn" onclick="onDeleteLine()">Delete line</button>
-            <button class="delete-line-btn" onclick="onAddLine()">Add line</button>
-            <a class="download" href="#" onclick="downloadCanvas(this)" download="">Download</a>
+
+            <button class="line-move-btn up-btn midel-btn" onclick="onLineUp()"><img src="./imgs/icons/arrow-up.png" alt=""></button>
+            <button class="switch-line-btn midel-btn" onclick="onSwitchLine()"><img src="./imgs/icons/arrow-up.png" alt=""> <img src="./imgs/icons/arrow-down.png" alt=""></button>
+            <button class="add-line-btn midel-btn" onclick="onAddLine()">+</button>
+            <button class="delete-line-btn midel-btn" onclick="onDeleteLine()"><img src="./imgs/icons/delete-icon2.png" alt=""> </button>
+            <button class="line-move-btn down-btn midel-btn" onclick="onLineDown()"><img src="./imgs/icons/arrow-down.png" alt=""></button>
+
+            <div class="font-section">
+                <button class="font-size-btn" onclick="onIncreaseFont()">A+</button>
+                <button class="font-size-btn" onclick="onDecreaseFont()">A-</button>
+                <button class="align-btn align-left" ><img src="./imgs/icons/align-left.png" alt=""></button>
+                <button class="align-btn align-center" ><img src="./imgs/icons/align-center.png" alt=""> </button>
+                <button class="align-btn align-right" ><img src="./imgs/icons/align-center.png" alt=""> </button>
+                <button class="change-color-btn"><img src="./imgs/icons/color-pic.png" alt=""></button>
+                <select name="" id="">
+                    <option value="">Impact</option>
+                    <option value="">Haettenschweiler</option>
+                    <option value="">Franklin Gothic Medium</option>
+                </select>
+            </div>
+            <button class="share-btn" ><a class="share" href="#" >Share</a></button>
+            <button class="download-btn" ><a class="download" href="#" onclick="downloadCanvas(this)" download="">Download</a></button>
+            
         </div>
 
     </section>
-
 
 
     <section class="main-gallery container">
