@@ -20,26 +20,26 @@
 
         <nav>
             <ul class="main-nav clean-list flex">
-                <li><a href="">Gallery</a></li>
+                <li onclick="onReturnToGallery()" ><a href="">Gallery</a></li>
                 <li><a href="">About</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <section class="main-editor container grid">
+    <section class="main-editor container none">
 
         <div class="canvas-container">
-            <!-- height="500" width="500" -->
-            <canvas id="my-canvas" height="546" width="476">
-                <!-- <img id="0" src="./imgs/canvas-cover.jpg" alt=""> -->
+            <!-- <canvas id="my-canvas" height="546" width="476"> -->
+            <canvas id="my-canvas" height="500" width="500">
+            
             </canvas>
         </div>
 
         <div class="space"></div>
 
-        <div class="btns-container">
-            <input onkeydown="onDrawText()" class="text-line" type="text">
+        <div class="btns-container grid">
+            <input onkeydown="onDrawText()" onclick="onChangeColor()" class="text-line" type="text">
 
             <button class="line-move-btn up-btn midel-btn" onclick="onLineUp()"><img src="./imgs/icons/arrow-up.png" alt=""></button>
             <button class="switch-line-btn midel-btn" onclick="onSwitchLine()"><img src="./imgs/icons/arrow-up.png" alt=""> <img src="./imgs/icons/arrow-down.png" alt=""></button>
@@ -48,13 +48,15 @@
             <button class="line-move-btn down-btn midel-btn" onclick="onLineDown()"><img src="./imgs/icons/arrow-down.png" alt=""></button>
 
             <div class="font-section">
-                <button class="font-size-btn" onclick="onIncreaseFont()">A+</button>
-                <button class="font-size-btn" onclick="onDecreaseFont()">A-</button>
+                <button class="font-size-btn big-font" onclick="onIncreaseFont()">A+</button>
+                <button class="font-size-btn small font" onclick="onDecreaseFont()">A-</button>
                 <button class="align-btn align-left" ><img src="./imgs/icons/align-left.png" alt=""></button>
                 <button class="align-btn align-center" ><img src="./imgs/icons/align-center.png" alt=""> </button>
-                <button class="align-btn align-right" ><img src="./imgs/icons/align-center.png" alt=""> </button>
-                <button class="change-color-btn"><img src="./imgs/icons/color-pic.png" alt=""></button>
-                <select name="" id="">
+                <button class="align-btn align-right" ><img src="./imgs/icons/align-right.png" alt=""> </button>
+                <!-- <input type="color" class="change-color-btn" onclick="onChangeColor()"><img src="./imgs/icons/color-pic.png" alt=""> -->
+                <button class="change-color-btn" onclick="onChangeColor()"><img src="./imgs/icons/color-pic.png" alt=""> </button>
+                <input class="input-color" type="color"  onclick="onChangeColor()" >
+                <select class="change-font-select" name="" id="">
                     <option value="">Impact</option>
                     <option value="">Haettenschweiler</option>
                     <option value="">Franklin Gothic Medium</option>
@@ -70,7 +72,7 @@
 
     <section class="main-gallery container">
 
-        <div class="grid-container gallery-container">
+        <div class="grid-container gallery-container grid">
 
         </div>
 

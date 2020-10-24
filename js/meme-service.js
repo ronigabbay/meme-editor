@@ -11,19 +11,19 @@ var gMeme = {
             txt: '',
             size: 34,
             align: 'center',
-            color: 'red'
+            color: 'black'
         },
         {
             txt: '',
             size: 34,
             align: 'center',
-            color: 'red'
+            color: 'black'
         },
         {
             txt: '',
             size: 34,
             align: 'center',
-            color: 'red'
+            color: 'black'
         }
         
     ]
@@ -39,9 +39,9 @@ function onChoosePic(id){
 
 
 function drawText(text, x, y) {
-    gCtx.strokeStyle = gMeme.lines.color;
-    gCtx.fillStyle = 'white'
-    gCtx.lineWidth = '2'
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+    gCtx.fillStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+    // gCtx.lineWidth = '2'
     gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px IMPACT`
     gCtx.textAlign = `${gMeme.lines[gMeme.selectedLineIdx].align}`
     gCtx.fillText(text, x, y)
