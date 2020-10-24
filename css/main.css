@@ -577,7 +577,7 @@ body.menu-open .main-header .main-nav {
 @media (max-width: 740px){
     .grid-container {
         grid-template-columns: repeat(2 , minmax(287px, 1fr));
-        grid-template-rows: repeat(4, minmax(302px, 1fr));
+        grid-template-rows: repeat(6, minmax(302px, 1fr));
         grid-gap: 0.937rem;
         padding-inline-start: 15px;
         padding-inline-end: 15px;
@@ -646,7 +646,7 @@ body.menu-open .main-header .main-nav {
 @media (max-width: 650px){
     .grid-container {
         grid-template-columns: repeat(2 , 1fr);
-        grid-template-rows: repeat(4, minmax(200px, 1fr));
+        grid-template-rows: repeat(6, minmax(100px, 1fr));
         grid-gap: 0.937rem;
         padding-inline-start: 20px;
         padding-inline-end: 20px;
