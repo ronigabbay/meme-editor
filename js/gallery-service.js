@@ -35,3 +35,7 @@ function renderGallery() {
     })
     elGallery.innerHTML = strHtml;
 }
+
+ function toggleMenu() {
+     document.body.classList.toggle('menu-open')
+ }
