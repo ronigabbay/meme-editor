@@ -26,12 +26,12 @@ var gImgs = [
 renderGallery()
 function renderGallery() {
     var elGallery = document.querySelector('.gallery-container')
-    // console.log(elGallery);
+    
 
     var strHtml = '';
     gImgs.forEach(function (img) {
         strHtml += `<img id="${img.id}" class="img" onclick="onChoosePic(${img.id})" src="./imgs/meme-imgs (square)/${img.id}.jpg" alt="">`
-        // console.log(img);
+
     })
     elGallery.innerHTML = strHtml;
 }

@@ -12,8 +12,6 @@
 
    
 
-   
-
     <header class="main-header container flex space-between align-center">
 
         <div class="logo">Logo</div>
@@ -42,7 +40,7 @@
         <div class="space"></div>
 
         <div class="btns-container grid">
-            <input onkeydown="onDrawText()" onclick="onChangeColor()" class="text-line" type="text">
+            <input onkeydown="onDrawText()" onclick="onChangeColor(), onChooseFontType()" class="text-line" type="text">
 
             <button class="line-move-btn up-btn midel-btn" onclick="onLineUp()"><img src="./imgs/icons/arrow-up.png" alt=""></button>
             <button class="switch-line-btn midel-btn" onclick="onSwitchLine()"><img src="./imgs/icons/arrow-up.png" alt=""> <img src="./imgs/icons/arrow-down.png" alt=""></button>
@@ -53,20 +51,22 @@
             <div class="font-section">
                 <button class="font-size-btn big-font" onclick="onIncreaseFont()">A+</button>
                 <button class="font-size-btn small font" onclick="onDecreaseFont()">A-</button>
-                <button class="align-btn align-left" ><img src="./imgs/icons/align-left.png" alt=""></button>
-                <button class="align-btn align-center" ><img src="./imgs/icons/align-center.png" alt=""> </button>
-                <button class="align-btn align-right" ><img src="./imgs/icons/align-right.png" alt=""> </button>
+                <button onclick="alignLeft()" class="align-btn align-left" ><img src="./imgs/icons/align-left.png" alt=""></button>
+                <button onclick="alignCenter()" class="align-btn align-center" ><img src="./imgs/icons/align-center.png" alt=""> </button>
+                <button onclick="alignRight()" class="align-btn align-right" ><img src="./imgs/icons/align-right.png" alt=""> </button>
                 <!-- <input type="color" class="change-color-btn" onclick="onChangeColor()"><img src="./imgs/icons/color-pic.png" alt=""> -->
                 <button class="change-color-btn" onclick="onChangeColor()"><img src="./imgs/icons/color-pic.png" alt=""> </button>
                 <input class="input-color" type="color"  onclick="onChangeColor()" >
-                <select class="change-font-select" name="" id="">
-                    <option value="">Impact</option>
-                    <option value="">Haettenschweiler</option>
-                    <option value="">Franklin Gothic Medium</option>
+                <select class="change-font-select" name="color-select" id="color-select">
+                    <option value="Impact">Impact</option>
+                    <option value="cursive">cursive</option>
+                    <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                    <option value="Haettenschweiler">Haettenschweiler</option>
                 </select>
             </div>
-            <button class="share-btn" ><a class="share" href="#" >Share</a></button>
-            <button class="download-btn" ><a class="download" href="#" onclick="downloadCanvas(this)" download="">Download</a></button>
+            <button onclick="OnReady()" class="ready-btn" ><a class="share" href="#" >Ready</a></button>
+            <!-- <button class="download-btn Download" ><a  href="#" onclick="downloadCanvas(this)" download="">Download</a></button> -->
+            <a class="download-btn Download" href="#" onclick="downloadCanvas(this)" download="">Download</a>
             
         </div>
 
@@ -81,15 +81,16 @@
 
     </section>
 
-<!-- 
+
     <footer class="main-footer">
         <div class="footer-container container" >
             <h4>Created By Roni Gabbay</h4>
         </div>
-    </footer> -->
+    </footer>
 
 
     <script src="./js/gallery-service.js"></script>
+    <script src="./js/storage-service.js"></script>
     <script src="./js/util-service.js"></script>
     <script src="./js/meme-service.js"></script>
     <script src="./js/meme-controller.js"></script>

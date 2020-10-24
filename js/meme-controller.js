@@ -12,34 +12,22 @@ function onInit() {
 }
 
 
+function alignLeft() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+}
+
+function alignRight() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+}
+
+function alignCenter() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+}
+
 function onChangeColor() {
-    console.log('color');
     var elInputColor = document.querySelector('.input-color');
-    console.log(elInputColor.value);
     gMeme.lines[gMeme.selectedLineIdx].color = elInputColor.value
-    // var img = new Image();
-    // img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
-    // img.onload = () => {
-    //     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-
-    //     if (gMeme.selectedLineIdx === 0) {
-    //         onInput()
-    //         drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt);
-    //         drawOtherLines()
-    //     } else if (gMeme.selectedLineIdx === 1) {
-    //         onInput()
-    //         drawText(gMeme.lines[1].txt, 250, gCurrTwoHeigt);
-
-    //         drawOtherLines1()
-
-    //     } else if (gMeme.selectedLineIdx === 2) {
-    //         onInput()
-    //         drawText(gMeme.lines[2].txt, 250, gCurrthreeHeigt);
-
-    //         drawOtherLines2()
-
-    //     }
-
+    
 }
 
 function onDeleteLine() {
@@ -51,8 +39,6 @@ function onDeleteLine() {
 
 
 function onAddLine(){
-    // זמני
-    // console.log(gMeme.lines[gMeme.selectedLineIdx]);
     if (gMeme.selectedLineIdx === 2) return;
     if (gMeme.lines[gMeme.selectedLineIdx + 1].txt) return;
     switchLine()
@@ -72,9 +58,6 @@ function switchLine() {
 }
 
 function onSwitchLine() {
-    // if (gMeme.selectedLineIdx === 0 && !gMeme.lines[gMeme.selectedLineIdx + 1].txt) return;
-
-    // if (gMeme.selectedLineIdx !== 2 && !gMeme.lines[gMeme.selectedLineIdx + 1].txt) return;
     var elInputVal = document.querySelector('.text-line')
     onInput();
     if (gMeme.selectedLineIdx < 2 && gMeme.lines[gMeme.selectedLineIdx + 1].txt) {
@@ -94,8 +77,7 @@ function onChoosePic(id) {
     var elGallery = document.querySelector('.grid-container');
     elGallery.classList.remove('grid');
     elGallery.classList.add('none')
-    gMeme.selectedImgId = id
-    // gMeme.selectedLineIdx = id - 1;  
+    gMeme.selectedImgId = id  
     drawImg();
 
 }
@@ -232,51 +214,92 @@ function onDrawText() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         if (gMeme.selectedLineIdx === 0) {
+            gCtx.strokeStyle = 'green';
             onInput()
             drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt);
-
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
             drawOtherLines()
 
         } else if (gMeme.selectedLineIdx === 1) {
+            gCtx.strokeStyle = 'green';
             onInput()
             drawText(gMeme.lines[1].txt, 250, gCurrTwoHeigt);
-
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
             drawOtherLines1()
 
         } else if (gMeme.selectedLineIdx === 2) {
+            gCtx.strokeStyle = 'green';
             onInput()
             drawText(gMeme.lines[2].txt, 250, 250);
-
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
             drawOtherLines2()
-
         }
 
     }
 
 }
 
+function OnReady() {
+    var img = new Image();
+    img.src = `./imgs/meme-imgs (square)/${gMeme.selectedImgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+        if (gMeme.selectedLineIdx === 0) {
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+            onInput()
+            drawText(gMeme.lines[gMeme.selectedLineIdx].txt, 250, gCurrOneHeigt);
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+            drawOtherLines()
+
+        } else if (gMeme.selectedLineIdx === 1) {
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+            onInput()
+            
+            drawText(gMeme.lines[1].txt, 250, gCurrTwoHeigt);
+            
+            drawOtherLines1()
+
+        } else if (gMeme.selectedLineIdx === 2) {
+            gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+            onInput()
+            drawText(gMeme.lines[2].txt, 250, 250);
+           
+            drawOtherLines2()
+        }
+    }
+}
+
 
 function drawOtherLines1() {
     gMeme.selectedLineIdx = 0;
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     drawText(gMeme.lines[0].txt, 250, gCurrOneHeigt);
     gMeme.selectedLineIdx = 2;
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     drawText(gMeme.lines[2].txt, 250, 250);
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     gMeme.selectedLineIdx = 1;
 
 }
 
 function drawOtherLines2() {
     gMeme.selectedLineIdx = 0;
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     drawText(gMeme.lines[0].txt, 250, gCurrOneHeigt);
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     gMeme.selectedLineIdx = 1;
     drawText(gMeme.lines[1].txt, 250, gCurrTwoHeigt);
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     gMeme.selectedLineIdx = 2;
 }
 
 function drawOtherLines() {
     gMeme.selectedLineIdx = 1;
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     drawText(gMeme.lines[1].txt, 250, gCurrTwoHeigt);
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     gMeme.selectedLineIdx = 2;
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     drawText(gMeme.lines[2].txt, 250, 250);
     gMeme.selectedLineIdx = 0;
 }

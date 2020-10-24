@@ -29,6 +29,10 @@ var gMeme = {
     ]
 }
 
+function onChooseFontType() {
+    var elFontOption = document.querySelector('.change-font-select option');
+    console.log( elFontOption.value);
+}
 
 
 
@@ -39,10 +43,10 @@ function onChoosePic(id){
 
 
 function drawText(text, x, y) {
-    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
+    var elFontOption = document.querySelector('.change-font-select option');
+    // gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color;
     gCtx.fillStyle = gMeme.lines[gMeme.selectedLineIdx].color;
-    // gCtx.lineWidth = '2'
-    gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px IMPACT`
+    gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px ${elFontOption.value} `
     gCtx.textAlign = `${gMeme.lines[gMeme.selectedLineIdx].align}`
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
