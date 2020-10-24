@@ -583,38 +583,38 @@ body.menu-open .main-header .main-nav {
         padding-inline-end: 15px;
         
     }
-/* 
+
     .main-editor {
         max-height: 400px;
-    } */
+    }
 
-    /* .canvas-container{
+    .canvas-container{
         max-height: 400px;
-    } */
+    }
 
     .canvas-container canvas {
         height: 100%;
     }
 
     
-    /* .btns-container {
+    .btns-container {
         max-height: 400px;
         grid-row-gap: 5px;
-    }  */
+    } 
 
     
     .download-btn{
         
-        grid-row-start: 89;
-        grid-row-end: 99;
+        grid-row-start: 72;
+        grid-row-end: 82;
     
     }
     
     
     .ready-btn {
     
-        grid-row-start: 89;
-        grid-row-end: 99;
+        grid-row-start: 72;
+        grid-row-end: 82;
     
     }
 }
