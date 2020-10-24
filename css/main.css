@@ -642,7 +642,7 @@ body.menu-open .main-header .main-nav {
 } 
 
 
-
+/* 
 @media (max-width: 650px){
     .grid-container {
         grid-template-columns: repeat(1 , minmax(287px, 1fr));
@@ -652,4 +652,4 @@ body.menu-open .main-header .main-nav {
         padding-inline-end: 20px;
         
     }
-}
+} */
