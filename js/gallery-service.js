@@ -23,15 +23,11 @@ var gImgs = [
     { id: 18, url: './imgs/meme-imgs (square)/18.jpg', keywords: ['happy'] }
 ];
 
-renderGallery()
 function renderGallery() {
     var elGallery = document.querySelector('.gallery-container')
-    
-
     var strHtml = '';
-    gImgs.forEach(function (img) {
-        strHtml += `<img id="${img.id}" class="img" onclick="onChoosePic(${img.id})" src="./imgs/meme-imgs (square)/${img.id}.jpg" alt="">`
-
+    gImgs.forEach(({ id }) => {
+        strHtml += `<img id="${id}" class="img" onclick="onChoosePic(${id})" src="./imgs/meme-imgs (square)/${id}.jpg" alt="">`
     })
     elGallery.innerHTML = strHtml;
 }
@@ -39,3 +35,15 @@ function renderGallery() {
  function toggleMenu() {
      document.body.classList.toggle('menu-open')
  }
+
+ 
+function choosePic(id) {
+    var elMemeEditor = document.querySelector('.main-editor');
+    elMemeEditor.classList.remove('none');
+    elMemeEditor.classList.add('grid');
+    var elGallery = document.querySelector('.grid-container');
+    elGallery.classList.remove('grid');
+    elGallery.classList.add('none')
+    gMeme.selectedImgId = id
+    
+}
